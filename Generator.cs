@@ -80,7 +80,7 @@ namespace GalacticScale.Generators
             //Create a list containing a single planet, that has default values.
             GSPlanets planets = new GSPlanets()
             {
-                new GSPlanet("Urf")
+                new GSPlanet("Urf", "Mediterranean", 200, 1, 0, 0, 1000, 0, 0, 1000, 0, 1)
             };
             planets[0].Radius = 5; //Lets make it tiny! (Vanilla size is 200).
 
