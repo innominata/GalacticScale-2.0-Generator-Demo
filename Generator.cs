@@ -82,7 +82,7 @@ namespace GalacticScale.Generators
             {
                 new GSPlanet("Urf", "Mediterranean", 200, 1, 0, 0, 1000, 0, 0, 1000, 0, 1)
             };
-            planets[0].Radius = 5; //Lets make it tiny! (Vanilla size is 200).
+            planets[0].Radius = 25; //Lets make it tiny! (Vanilla size is 200).
 
             //Create one O-type main sequence star, containing the above planet. Set the seed to one. This is the minimum requirement for a star. There are more options available.
             GSSettings.Stars.Add(new GSStar(1, "BeetleJuice", ESpectrType.O, EStarType.MainSeqStar, planets)); 
