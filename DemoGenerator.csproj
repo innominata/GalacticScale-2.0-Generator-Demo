@@ -32,15 +32,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Assembly-CSharp.refstub">
-      <HintPath>..\..\..\..\gen3\DSP_Plugins.GalacticScale\bin\Debug\Assembly-CSharp.refstub.dll</HintPath>
+    <Reference Include="Assembly-CSharp_publicized">
+      <HintPath>..\..\Users\Tony\Downloads\Assembly-CSharp_publicized.dll</HintPath>
     </Reference>
     <Reference Include="BepInEx, Version=5.4.5.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Users\inno\AppData\Roaming\r2modmanPlus-local\DysonSphereProgram\profiles\test\BepInEx\core\BepInEx.dll</HintPath>
+      <HintPath>..\..\Users\Tony\AppData\Roaming\r2modmanPlus-local\DysonSphereProgram\profiles\Default\BepInEx\core\BepInEx.dll</HintPath>
     </Reference>
-    <Reference Include="GalacticScale">
-      <HintPath>..\..\..\..\gen3\DSP_Plugins.GalacticScale\bin\Debug\GalacticScale.dll</HintPath>
+    <Reference Include="GalacticScale2a40">
+      <HintPath>..\..\Users\Tony\Downloads\GalacticScale2a40.dll</HintPath>
+    </Reference>
+    <Reference Include="netstandard">
+      <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Dyson Sphere Program\DSPGAME_Data\Managed\netstandard.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -49,10 +52,10 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="UnityEngine">
-      <HintPath>..\..\..\..\gen3\DSP_Plugins.GalacticScale\bin\Debug\UnityEngine.dll</HintPath>
+      <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Dyson Sphere Program\DSPGAME_Data\Managed\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\..\..\..\gen3\DSP_Plugins.GalacticScale\bin\Debug\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Dyson Sphere Program\DSPGAME_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

@@ -1,6 +1,4 @@
 ﻿using System.Collections.Generic;
-using BepInEx;
-
 
 namespace GalacticScale.Generators
 {
@@ -12,7 +10,7 @@ namespace GalacticScale.Generators
         public string Version => "0.0";
         public string GUID => "space.customizing.generators.demo";
         public GSGeneratorConfig Config => config; // Return our own generator config when asked, instead of using default config
-        public List<GSOption> Options => options; // Likewise for options
+        public GSOptions Options => options; // Likewise for options
         public bool DisableStarCountSlider => false;
         public void Init()
         {
@@ -22,7 +20,7 @@ namespace GalacticScale.Generators
             config.MaxStarCount = 1024; //1024 is game limit, and already ridiculous. Setting this higher will cause the game to crash.
             config.MinStarCount = 1;
             List<string> densityList = new List<string>() { "Densest", "Denser", "Default", "Sparse", "Sparsest" };
-            options.Add(new GSOption("Density", "ComboBox", densityList, DensitySelectCallback, InitializeDensitySelect));
+            densityCombobox = options.Add(GSUI.Combobox("Density", densityList, DensitySelectCallback, InitializeDensitySelect));
         }
         public void Import(GSGenPreferences prefs) //This is called on game start, with the same object that was exported last time
         {
@@ -43,7 +41,8 @@ namespace GalacticScale.Generators
         private float minStepLength = 2.3f;
         private float maxStepLength = 3.5f;
         private float minDistance = 2f;
-        public List<GSOption> options = new List<GSOption>();
+        private GSUI densityCombobox;
+        public GSOptions options = new GSOptions();
         private GSGenPreferences preferences = new GSGenPreferences();
         private GSGeneratorConfig config = new GSGeneratorConfig();
 
@@ -52,7 +51,7 @@ namespace GalacticScale.Generators
         ////////////////////////////
         public void InitializeDensitySelect() // UI Element Postfix methods are called once UI elements have been created
         {
-            options[0].rectTransform.GetComponentInChildren<UIComboBox>().itemIndex = preferences.GetInt("Density",0); // Option objects' rectTransform is set once the UI element has been created
+            densityCombobox.Set(preferences.GetInt("Density",0)); //Set the index of the combobox to the integer saved in our preferences
         }
         public void DensitySelectCallback(object o) => SetDensity((int)o); // Callback methods are called when the user interacts with the UI element
 
@@ -79,7 +78,7 @@ namespace GalacticScale.Generators
             SetDensity(preferences.GetInt("Density",2));
 
             //Create a list containing a single planet, that has default values.
-            List<GSPlanet> planets = new List<GSPlanet>
+            GSPlanets planets = new GSPlanets()
             {
                 new GSPlanet("Urf")
             };
@@ -90,7 +89,7 @@ namespace GalacticScale.Generators
             //Create a whole bunch of identical empty F-type Giant stars
             for (var i = 1; i < starCount; i++)
             {
-                GSSettings.Stars.Add(new GSStar(1, "Star" + i.ToString(), ESpectrType.F, EStarType.GiantStar, new List<GSPlanet>()));
+                GSSettings.Stars.Add(new GSStar(1, "Star" + i.ToString(), ESpectrType.F, EStarType.GiantStar, new GSPlanets()));
             }
 
             //Change some of the galaxy parameters. This is not necessary, but it lets this test generator actually do something meaningful to affect generation.
