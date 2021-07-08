@@ -53,7 +53,7 @@ namespace GalacticScale.Generators
         {
             densityCombobox.Set(preferences.GetInt("Density",0)); //Set the index of the combobox to the integer saved in our preferences
         }
-        public void DensitySelectCallback(object o) => SetDensity((int)o); // Callback methods are called when the user interacts with the UI element
+        public void DensitySelectCallback(Val o) => SetDensity(o); // Callback methods are called when the user interacts with the UI element. Val is a wrapper for implicit conversion of type
 
         //////////////////////////////
         /// Finally, lets do something
