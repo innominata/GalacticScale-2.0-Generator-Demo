@@ -80,10 +80,10 @@ namespace GalacticScale.Generators
             //Create a list containing a single planet, that has default values.
             GSPlanets planets = new GSPlanets()
             {
-                new GSPlanet("Urf", "Mediterranean", 200, 1, 0, 0, 1000, 0, 0, 1000, 0, 1)
+                new GSPlanet("Urf", "Mediterranean", 200, 1, 0, 10000, -1, -1, 1000, 0, -1)
             };
-            planets[0].Radius = 25; //Lets make it tiny! (Vanilla size is 200).
-
+            planets[0].Radius = 35; //Lets make it tiny! (Vanilla size is 200).
+            GSSettings.BirthPlanetName = "Urf"; //We need to decide where to spawn
             //Create one O-type main sequence star, containing the above planet. Set the seed to one. This is the minimum requirement for a star. There are more options available.
             GSSettings.Stars.Add(new GSStar(1, "BeetleJuice", ESpectrType.O, EStarType.MainSeqStar, planets)); 
             //Create a whole bunch of identical empty F-type Giant stars

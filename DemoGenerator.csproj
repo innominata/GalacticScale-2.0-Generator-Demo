@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DemoGenerator</RootNamespace>
     <AssemblyName>DemoGenerator</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -30,20 +31,22 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Assembly-CSharp_publicized">
-      <HintPath>..\..\Users\Tony\Downloads\Assembly-CSharp_publicized.dll</HintPath>
+    <Reference Include="Assembly-CSharp-0.7.18.7103_publicized">
+      <HintPath>..\..\..\GalacticScale2\DSP_Plugins.GalacticScale\lib\Assembly-CSharp-0.7.18.7103_publicized.dll</HintPath>
     </Reference>
     <Reference Include="BepInEx, Version=5.4.5.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Users\Tony\AppData\Roaming\r2modmanPlus-local\DysonSphereProgram\profiles\Default\BepInEx\core\BepInEx.dll</HintPath>
     </Reference>
-    <Reference Include="GalacticScale2a40">
-      <HintPath>..\..\Users\Tony\Downloads\GalacticScale2a40.dll</HintPath>
+    <Reference Include="GalacticScale, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\GalacticScale2\DSP_Plugins.GalacticScale\bin\Debug\GalacticScale.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
-      <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Dyson Sphere Program\DSPGAME_Data\Managed\netstandard.dll</HintPath>
+      <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\Dyson Sphere Program\DSPGAME_Data\Managed\netstandard.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
