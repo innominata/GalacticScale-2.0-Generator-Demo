@@ -31,10 +31,7 @@ namespace GalacticScale.Generators
         {
             return preferences;
         }
-        public void Generate(int starCount) // Redirect to our private generation method
-        {
-            generate(starCount);
-        }
+
         //////////////////////////////////////////////////////////////////////
         ///// All code below here is generator specific
         //////////////////////////////////////////////////////////////////////
@@ -73,7 +70,7 @@ namespace GalacticScale.Generators
             }
         }
 
-        public void generate(int starCount)
+        public void Generate(int starCount, StarData forcedStar = null)
         {
             SetDensity(preferences.GetInt("Density",2));
 
