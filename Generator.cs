@@ -17,7 +17,7 @@ namespace GalacticScale.Generators
             GS2.Log("Initializing Demo Generator"); // Use Galactic Scales Log system for debugging purposes.
             config.DisableSeedInput = true;
             config.DisableStarCountSlider = false;
-            config.MaxStarCount = 1024; //1024 is game limit, and already ridiculous. Setting this higher will cause the game to crash.
+            config.MaxStarCount = 1024; //1024 is recommended limit, and already ridiculous. Setting this higher may cause the game to crash.
             config.MinStarCount = 1;
             List<string> densityList = new List<string>() { "Densest", "Denser", "Default", "Sparse", "Sparsest" };
             densityCombobox = options.Add(GSUI.Combobox("Density", densityList, DensitySelectCallback, InitializeDensitySelect));
