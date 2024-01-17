@@ -10,6 +10,11 @@ namespace GalacticScale.Generators
         public string Version => "0.0";
         public string GUID => "space.customizing.generators.demo";
         public GSGeneratorConfig Config => config; // Return our own generator config when asked, instead of using default config
+        public void OnUpdate(string key, Val val)
+        {
+            // This handles the default callback for UI elements. We don't need to do anything here.
+        }
+
         public GSOptions Options => options; // Likewise for options
         public bool DisableStarCountSlider => false;
 
