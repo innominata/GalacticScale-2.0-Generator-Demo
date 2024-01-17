@@ -12,6 +12,7 @@ namespace GalacticScale.Generators
         public GSGeneratorConfig Config => config; // Return our own generator config when asked, instead of using default config
         public GSOptions Options => options; // Likewise for options
         public bool DisableStarCountSlider => false;
+
         public void Init()
         {
             GS2.Log("Initializing Demo Generator"); // Use Galactic Scales Log system for debugging purposes.
@@ -70,7 +71,7 @@ namespace GalacticScale.Generators
             }
         }
 
-        public void Generate(int starCount, StarData forcedStar = null)
+        public void Generate(int starCount, StarData forcedStar)
         {
             SetDensity(preferences.GetInt("Density",2));
 
