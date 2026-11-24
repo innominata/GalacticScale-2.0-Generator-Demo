@@ -80,16 +80,26 @@ namespace GalacticScale.Generators
         {
             SetDensity(preferences.GetInt("Density",2));
 
-            //Create a list containing a single planet, that has default values.
-            GSPlanets planets = new GSPlanets()
-            {
+            // Initialize GS2's planet themes (Mariterra, Icefrostia, etc.)
+            GS2Generator2.SetupBaseThemes();
+            GS2Generator2.InitThemes();
+
+            // Create a list containing a single planet, that has default values.
+            GSPlanets planets = new GSPlanets() {
                 new GSPlanet("Urf", "Mediterranean", 200, 1, 0, 10000, -1, -1, 1000, 0, -1)
             };
-            planets[0].Radius = 35; //Lets make it tiny! (Vanilla size is 200).
-            GSSettings.BirthPlanetName = "Urf"; //We need to decide where to spawn
-            //Create one O-type main sequence star, containing the above planet. Set the seed to one. This is the minimum requirement for a star. There are more options available.
-            GSSettings.Stars.Add(new GSStar(1, "BeetleJuice", ESpectrType.O, EStarType.MainSeqStar, planets)); 
-            //Create a whole bunch of identical empty F-type Giant stars
+
+            // Lets make it tiny! (Vanilla size is 200)
+            planets[0].Radius = 35;
+
+            // Create one O-type main sequence star, containing the above planet. Set the seed to one. This is the minimum requirement for a star. There are more options available.
+            GSSettings.Stars.Add(new GSStar(1, "BeetleJuice", ESpectrType.O, EStarType.MainSeqStar, planets));
+
+            // Set Icarus' spawn point in the galaxy.
+            GSSettings.BirthPlanetName = "Urf"; 
+
+            // Create a whole bunch of identical empty F-type Giant stars
+            // Itaane: Not working at the moment.
             for (var i = 1; i < starCount; i++)
             {
                 GSSettings.Stars.Add(new GSStar(1, "Star" + i.ToString(), ESpectrType.F, EStarType.GiantStar, new GSPlanets()));
